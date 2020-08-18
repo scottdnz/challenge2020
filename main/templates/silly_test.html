@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'js/node_modules/bootstrap/dist/css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'css/common.css' %}">
+		<!-- <script src="{% static 'js/node_modules/jquery/dist/jquery.js' %}"></script> -->
+	</head>
+	<body>
+		<div class="container">
+			<a href="/main">
+				<img src="{% static 'img/home.png' %}" class="icon">
+			</a>
+			<h1>Test List Results</h1>
+			<br><br>
+
+			<table class="table">
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Phone No</th>
+				</tr>
+
+				{% for user in users %}
+					<tr>
+						<td>{{ user.id }}</td>
+						<td>{{ user.name }}</td>
+						<td>{{ user.phone }}</td>
+					</tr>
+				{% endfor %}
+			</table>
+
+			<br><br>
+			<h2>Numpy play</h2>
+			{% for ln in numpy_data %}
+				{{ ln }} <br>
+			{% endfor %}
+
+
+			<br><br>
+			<h2>Pandas play</h2>
+			{% for ln in pandas_data %}
+				{{ ln }} <br>
+			{% endfor %}
+
+	</body>
+</html>
