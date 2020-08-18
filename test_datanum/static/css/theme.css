@@ -1,0 +1,539 @@
+body{
+	background: #FFFFFF;
+	color: #202020;
+}
+a, a:visited{
+	color: #375b91;
+}
+
+.btn-primary, .btn-primary:visited, .btn-success, .btn-success:visited, .btn-warning, .btn-warning:visited, .btn-danger, .btn-danger:visited {
+	color: #fff;
+}
+
+.btn-default, .btn-default:visited {
+	color: #000;
+}
+
+input[type=text]{
+	border: 1px solid #4f85a5;
+}
+select{
+	margin-bottom: 5px;
+	margin-top: 2px;
+}
+h3 {
+	color: #336699;
+}
+#header {
+	background: #FFFFFF;
+}
+#header div#jobinfo label, div#jobinfobox label {
+	color: #008bc6;
+}
+div#jobinfobox > div {
+	
+}
+#header div#jobinfo span.jobstatus {
+	color: red;
+}
+#content{
+	background:#FFF;
+	border-top: 1px solid #CCC;
+	border-bottom: 2px solid #CCC;
+}
+#sidebar{
+	background:#FFF;
+}
+#sidebar h3{
+	background:#f3f9ff;
+	border-bottom:1px solid #d9e6f0;
+}
+#top-panel{
+	background: #FFF;
+}
+#topmenu a, #topmenu a:visited{
+	color:#FFF;
+	background: #2c9dcf url('/img/grad_bg_blue-30px.png') repeat-x top;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+#topmenu .current a, #topmenu a:hover, #topmenu .current a:visited {
+	color: #000000;
+	text-shadow: none;
+	filter: none;
+}
+#topmenu .error a {
+	background-color: #CC0000;
+}
+#topmenu .current.error a {
+	color:#375b91;
+	background-color: #d9f0fd;
+}
+#topmenu .enabled a, #topmenu .enabled a:visited {
+	background: 0;
+	background: #009900 url('/img/grad_bg_green-30px.png') repeat-x top;
+}
+#topmenu .enabled2 a, #topmenu .enabled2 a:visited {
+	background: 0;
+	background: #ff9900 url('/img/grad_bg_orange-30px.png') repeat-x top;
+}
+#topmenu .enabled3 a, #topmenu .enabled3 a:visited {
+	background: 0;
+	background: #6666CC url('/img/grad_bg_purple-30px.png') repeat-x top;
+}
+#topmenu .warn a, #topmenu .warn a:visited {
+	background: 0;
+	background: #CC0000 url('/img/grad_bg_red-30px.png') repeat-x top;
+}
+#topmenu .warn ul li a, #topmenu .warn ul li a:visited {
+	background-image: none;
+	color: #FFFFFF;
+	background-color: #2c9dcf;
+}
+#topmenu ul ul li.warn a, #topmenu ul ul li.warn a:visited {
+	background: 0;
+	background-color: #CC0000;
+}
+#topmenu ul ul li a,#topmenu ul ul li a:visited, #topmenu .current ul li a, #topmenu .current ul li a:visited, #topmenu .enabled2 ul li a, #topmenu .enabled2 ul li a:visited {
+	text-shadow: none;
+	filter: none;
+	color: #FFFFFF;
+	font-weight: normal;
+	background-image: none;
+}
+#topmenu ul ul li a:hover, #topmenu .current ul li a:hover , #topmenu .enabled2 ul li a:hover {
+	color: #000000;
+	font-weight: normal;
+}
+#wrapper {
+	background: #FFF;
+}
+table{
+	background:none;
+}
+/*td, th{
+	border:1px solid #d9e6f0;
+}*/
+tr.rowhl {
+	background-color: #EEE;
+}
+tr.highlight td {
+	border: 3px solid red;
+	background-color: #FCC;
+	color: red;
+	font-weight: bold;
+	padding: 10px;
+}
+thead{
+	background:#f3f9ff;
+}
+#styleswitcher{
+	background:#FFFFFF;
+}
+#footer{
+	background:#FFF;
+}
+
+#box{
+	border: 1px solid #CCC;
+}
+.boxerror {
+	border: 1px solid #F00;
+	background-color: #FEE;
+}
+#formerror {
+	border: 2px solid #d23c24;
+	background: #EEE;
+	margin: 10px;
+	font-weight: bold;
+}
+#formerror h3{
+	color: #FFF;
+	background: #d23c24;
+}
+#formerror div {
+	margin: 10px;
+}
+/***************
+	  Forms
+***************/
+form#form fieldset {
+	border: 0;
+}
+form#form legend {
+	color:#375b91;
+	font-size:14px;
+	margin: 0;
+	margin-top: 3px;
+	padding: 0;
+}
+form#form input[type=text] {
+	border:1px solid #4f85a5;
+	background:#fff;
+	vertical-align: -5px;
+}
+form#form textarea {
+	border:1px solid #4f85a5;
+	background:#fff;
+}
+form#form option {
+	background:#FFF;
+}
+form#form optgroup {
+	background:#d9e6f0;
+}
+form#form optgroup option {
+
+}
+form#form #button1, form#form .button2, form#form #button3, form#form #button4, form#form #button5, form#form .button6 {
+	color:#375b91;
+}
+/* form#form .button {
+	background-color: #375b91;
+	color: white;
+}
+form#form .button:hover {
+	background-color: #4f85a5;
+}*/
+form#form .whitebg {
+	background-color: #FFF;
+}
+.formhl {
+	color: #A00;
+	font-weight: bold;
+}
+#letter h3 {
+	color: #000000;
+}
+.jeditable button {
+	background-color: #375b91;
+	color: white;
+}
+/*.rfisort a.button {
+	background-color: #375b91;
+	color: white;
+}
+.rfisort a.activeb {
+	background-color: #009900;
+	color: white;
+}*/
+.tableform {
+}
+.tableform caption {
+	color: #375b91;
+}
+.tableform input.submit {
+	background-color: #375b91;
+	color: white;
+}
+.tableform input.submit:hover {
+	background-color: #4f85a5;
+	cursor: pointer;
+}
+.apptable caption {
+	color: #375b91;
+}
+.users-table caption {
+	color: #375b91;
+}
+/*#dialog-form a.button {
+	background-color: #375b91;
+	color: white;
+}
+#dialog-form a.button:hover {
+	background-color: #4f85a5;
+}*/
+#dialog-form a.off{
+	background-color: #999;
+}
+/*.statstable td, .statstable th{
+	border:1px solid #999999;
+}*/
+#vetting_construction .ui-selected { 
+	background: #336699; 
+	color: white;
+}
+#vetting_construction input, #vetting_construction textarea {
+	border: 1px solid #CCCCCC;
+}
+
+/***************
+	Home
+***************/
+#infobox{
+	zborder:1px solid #d9e6f0;
+	background: #EEE;
+	padding-bottom: 5px;
+}
+#infobox h3{
+	background: none;
+	zbackground:#f3f9ff;
+	zborder-bottom:1px solid #d9e6f0;
+	color:#375b91;
+}
+.lbutton, a.lbutton {
+	color: #FFFFFF;
+	background-color: #336699;
+}
+.lbutton:hover {
+	background-color: #4477AA;
+}
+.goback, a.goback {
+	color: #FFFFFF;
+	background-color: #009900;
+}
+.goback:hover {
+	background-color: #00CC00;
+}
+.goback.off {
+	background-color: #999;
+}
+.goback.off:hover {
+	background-color: #CCC;
+	cursor: pointer;
+}
+.goback.red {
+	background-color: #C33;
+}
+.goback.red:hover {
+	background-color: #F66;
+	cursor: pointer;
+}
+.goback.blue {
+	background-color: #369;
+}
+.goback.blue:hover {
+	background-color: #58B;
+	cursor: pointer;
+}
+.goback.alt {
+	background-color: #93C;
+}
+.goback.alt:hover {
+	background-color: #C6F;
+	cursor: pointer;
+}
+.goback.ps {
+	background-color: #9C3;
+}
+.goback.ps:hover {
+	background-color: #CF6;
+	cursor: pointer;
+}
+.clnotes textarea{
+	border: 1px solid #375b91;
+	padding: 6px;
+}
+/*.clnotes .button {
+	background-color: #375b91;
+	color: white;
+}
+.clnotes .button:hover {
+	background-color: #4f85a5;
+}*/
+.plnotes {
+	padding: 4px;
+	background-color: #f9f9f9;
+	margin-right: 20px;
+	font-family: Arial;
+}
+.plnotes a {
+	color: #008bc6;
+	text-decoration: underline;
+	font-weight: bold;
+}
+/*.clbut h3 {
+	color: #000000;
+}
+.clbut div.si{
+	background-color: #CCFFCC;
+}
+.clbut div.alt{
+	background-color: #93C;
+}
+.clbut div.vm{
+	background-color: #C93;
+}
+.clbut div.ps{
+	background-color: #9C3;
+}
+.clbut div.off{
+	background-color: #CCCCCC;
+}
+.clbut a.button {
+	background-color: #375b91;
+	color: white;
+} */
+.clbut div.pimitem {
+	background: #EFEFEF;
+}
+.clbut div.pimitem h3 {
+	background: #2c9dcf url('/img/grad_bg_blue-30px.png') repeat-x top;
+	color: white;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+
+.enote {
+	font-weight: bold;
+	background-color: #FFCCFF;
+	padding: 4px;
+	line-height: 22px;
+}
+#rightnow {
+	border:1px solid #d9e6f0;
+}
+#rightnow .reallynow {
+	background:#f3f9ff;
+	color:#375b91;
+}
+#rightnow h3{
+	background:#f3f9ff;
+	border-bottom:1px solid #d9e6f0;
+}
+.dashboard-status {
+	font-weight: bold;
+	color: white;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+.dashboard-status.done {
+	background-color: #00CC00;
+}
+.dashboard-status.noreq {
+	background-color: #999;
+}
+.dashboard-status.nostart {
+	background-color: #CC0000;
+}
+.dashboard-status.ip {
+	background-color: #FF9900;
+}
+.dashboard-status.si {
+	background-color: #996699;
+}
+
+/******************************
+	Checklist Layout
+*******************************/
+.cc {
+	background: #2c9dcf url('/img/grad_bg_blue-40px.png') repeat-x top;
+	color: white;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+.cc a.prevcc, .cc a.prevcc:visited, .cc a.prevcc:active  {
+	background-image: url('/img/arrow_previous.png');
+	color: #FFFFFF;
+}
+.cc a.nextcc, .cc a.nextcc :active, .cc a.nextcc :visited {
+	background-image: url('/img/arrow_next.png');
+	color: #FFFFFF;
+}
+.bd caption {
+	font-weight: bold;
+	color: #FFFFFF;
+	background: #2c9dcf url('/img/grad_bg_blue-40px.png') repeat-x top;
+}
+.bd th {
+	color: #008bc6;
+	text-align: left;
+	font-weight: normal;
+}
+.bd .hl {
+	background-color: #CCFFCC;
+}
+.bd  td.selist.qhlpl {
+	background-image: url('/img/tick.png');
+	background-repeat: no-repeat;
+	background-position: 5px center;
+}
+/******************************
+	Buttons
+*******************************/
+.button, .button:visited {
+	background: #2c9dcf url('/img/grad_bg_blue-30px.png') repeat-x top;
+	color: white;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+.button.warn {
+	background-color: #CC0000;
+}
+.button.orange {
+	background: #FF9900 url('/img/grad_bg_orange-30px.png') repeat-x top;
+}
+.button.alt {
+	background-color: #99d428;
+}
+.button.green {
+	background: #009900 url('/img/grad_bg_green-30px.png') repeat-x top;
+}
+.button.red {
+    background: #990000 url('/img/grad_bg_red-30px.png') repeat-x top;
+}
+.button.brgreen {
+	background: #99d428 url('/img/grad_bg_brgreen-30px.png') repeat-x top;
+}
+.button.grey {
+	background: #666666 url('/img/grad_bg_grey-30px.png') repeat-x top;
+}
+.button.ltgrey {
+	background: #AAAAAA url('/img/grad_bg_ltgrey-30px.png') repeat-x top;
+}
+.button.purple {
+	background: #6666CC url('/img/grad_bg_purple-30px.png') repeat-x top;
+}
+.button.alt2 {
+	background-color: #996699;
+}
+.button.matt, .button.short {
+	background-image: none;
+}
+.button.short {
+	font-weight: normal;
+}
+.button.matt:hover, .button.short:hover {
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+}
+.button:hover {
+	background-image: none;
+}
+.dropdown {
+	background-color: #99d428;
+	color: white;
+}
+/******************************
+	Various Colour Classes
+*******************************/
+.odd {background-color:#f3f3f3;}
+.rowhighlight {background-color:#FFFF66;}
+.rowhighlight-red {background-color:#ff8b8b;}
+.rowhighlight-red:hover {background-color:#ffbdbd !important;}
+.rowyes {background-color:#CCFFCC;}
+.rowno {background-color:#FFCCCC;}
+.rowinc {background-color:#ffd8ae;}
+.rowdocs {background-color: lightgoldenrodyellow;}
+/*.ui-widget-overlay { background: #aaaaaa url(/css/images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: 1.0;filter:Alpha(Opacity=100); }*/
+.ui-widget-overlay { background: url(/css/images/ui-bg_flat_0_aaaaaa_40x100x.png) 50% 50% repeat; opacity: 1.0;filter:Alpha(Opacity=100); }
+.ui-widget-header { color: #ffffff; }
+.ui-dialog-titlebar  {
+	/*background: #99cc33;*/
+	background: #2c9dcf;
+	/*background-image: url("/img/title_bg_blue.png");*/
+	/*background-position: bottom;*/
+	border: 0;
+	font-size: 12pt;
+}
+.ui-dialog-titlebar-close {
+  display: none;
+}
+
+.inspection-bookings-dialog .ui-dialog-titlebar-close {
+    display: block !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+	/*background: #99cc33;*/
+	background: #2c9dcf;
+	color: #FFF;
+	border: 0;
+	/*background-image: url("/img/title_bg_blue.png");*/
+	/*background-position: bottom;*/
+}
