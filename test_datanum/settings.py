@@ -30,7 +30,7 @@ SECRET_KEY = '0b@mg#8%a=u^3lg#4m7z@80hmk(82os%b-z09ji1x*jvw5om64'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangolocal.scott']
+ALLOWED_HOSTS = ['djangolocal.scott', 'localhost']
 
 
 # Application definition

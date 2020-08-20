@@ -1,0 +1,203 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap_335.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/newui.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/theme.css' %}" />
+
+        <style>
+            #vetting_construction .ui-selected { 
+                background: #336699; 
+                color: white;
+            }
+            .jtilex h3, .construction_materials_container h3 {
+                color: black !important;
+            }
+
+            #top-heading-cheat {
+                position: fixed;
+                z-index: 999;
+            }
+
+            div {
+                position: relative;
+                z-index: 99;
+            }
+
+            .popupText {
+                font-size: 150% !important;
+                font-weight: bold;
+                color: white;
+            }
+        </style>
+
+        <!-- <script src="js/jquery-ui.js" /> -->
+        <!-- <script src="{% static 'js/jquery-1.11.2.min.js' %}"> </script> -->
+        <script src="{% static 'js/node_modules/jquery/dist/jquery.js' %}"></script>
+
+        <script src="{% static 'js/node_modules/jquery-popup-overlay/jquery.popupoverlay.js' %}"></script>
+
+        <script src="{% static 'js/test.js' %}"> </script>
+        
+    </head>
+<body>
+
+
+
+<div class="container-fluid">
+    <img src="{% static 'img/top_heading_cheat.png' %}" style="width: 100%;" id="top-heading-cheat">
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div id="JPO">
+        <p class="popupText">
+        Do you wish to pre-select questions based on intelligent machine learning defaults for your council?
+        </p>
+
+        <div class="popupText">
+            <input type="radio" checked>Yes</input>
+            <input type="radio">No</input>
+        </div>
+
+        <br>
+
+        <button class="JPO_close button">Close</button>
+    </div>
+
+
+    <div id="content" style="width: 90%; margin-left: auto; margin-right: auto;">
+
+
+    <form id="vetting_construction" style="margin-bottom: 10px;">
+
+    <div class="construction_materials_container ">
+
+            <h3>Construction Materials</h3>
+            <span>Click entries in the table below to enable as required</span>
+            <input type="hidden" id="cd_cm_string" name="cd_cm_string" value="" class="ui-selectable">
+                <div id="construction_material_container" class="row" style="margin: 10px;">
+                                <!-- div class="jtilex" style="float: left; width: 200px; display: block; margin-right: 20px;" -->
+
+                            <!-- -->
+
+
+                </div>
+        <div style="clear: both;">&nbsp;</div>
+    </div>
+
+
+<div align="center">
+            <hr>
+            <!-- span id="cd_savestatus"></span -->
+            <div id="cd_savestatus" class="c3-box c3-box-warning" style="display: none; width: 150px; margin-top: 20px;"></div>
+            <br>
+            <a id="cd_saveform" class="btn btn-success">Save Construction Details</a>
+            <br><br>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+        <div class="cc cleafix">
+                                                    <h3>Vetting Checklist</h3>
+                                                <div class="cc-header-control"><a href="#" class="btn btn-success btn-sm btn-vetting-auto-answer-action" data="y" vetting="y" data-vetting-building-id="">Mark all as completed</a></div>
+                                                </div>
+
+
+    <div class="clq">
+                        <table id="qtable" data-jid="{{ job_id }}">
+                            
+
+
+<!--                                                            <tr id="l_85280" data-row-number="1">-->
+<!--                                                                        <td id="q_65099" class="mr">                                                                                <span class="pull-right question-badges" style="padding: 2px 8px;"><span id="200472_2578_65099"></span></span>                                        <b id="t_65099">Application Form: </b>                                        Has the application form been properly completed?                                          -->
+<!--                                        <div id="ref_65099" class="ref"></div><div class="hl"></div>-->
+<!--                                    </td>-->
+<!--                                                                            <td class="rh">-->
+<!--                                            <img id="s_p_65099" xtitle="pass1" src="{% static 'img/yes.png' %}" alt="Yes"><img id="s_f_65099" xtitle="fail1" src="{% static 'img/no_off.png' %}" alt="No"><img id="s_u_65099" xtitle="na1" src="{% static 'img/na_off.png' %}" alt="N/A"><img id="notes_65099" src="{% static 'img/notes.png' %}" alt="Write Notes">                                        </td>-->
+<!--                                                                    </tr>-->
+
+
+
+<!--                                                            <tr id="l_85281" class="odd" data-row-number="2">-->
+<!--                                                                        <td id="q_65100" class="mr">                                                                                <span class="pull-right question-badges" style="padding: 2px 8px;"><span id="200472_2578_65100"></span></span>                                        <b id="t_65100">Deposit / Fee: </b>                                        Has the appropriate deposit / fee been paid?                                        &lt;!&ndash; span class="pull-right question-badges" style="padding: 2px 8px;">-->
+<!--                                            <span class="badge badge-purple">SI</span>-->
+<!--                                            <span class="badge badge-orange">VM</span>-->
+<!--                                            <span class="badge badge-red">PS</span>-->
+<!--                                            <span class="badge badge-si">ALT</span>-->
+<!--                                        </span &ndash;&gt;-->
+<!--                                        <div id="ref_65100" class="ref"></div><div class="hl"></div>-->
+<!--                                    </td>-->
+<!--                                                                            <td class="rh">-->
+<!--                                            <img id="s_p_65100" xtitle="pass2" src="{% static 'img/yes.png' %}" alt="Yes"><img id="s_f_65100" xtitle="fail2" src="{% static 'img/no_off.png' %}" alt="No"><img id="s_u_65100" xtitle="na2" src="{% static 'img/na_off.png' %}" alt="N/A"><img id="notes_65100" src="{% static 'img/notes.png' %}" alt="Write Notes">                                        </td>-->
+<!--                                                                    </tr>-->
+<!--                                                            <tr id="l_85282" data-row-number="3">-->
+<!--                                                                        <td id="q_65101" class="mr">                                                                                <span class="pull-right question-badges" style="padding: 2px 8px;"><span id="200472_2578_65101"></span></span>                                        <b id="t_65101">Evidence of Ownership / Owner's Permission: </b>                                        Is a current Record of Title or evidence of ownership provided that is in the owner's name; and if the application has been submitted by an agent is owner's permission provided? <br> <i><img src="{% static 'img/icons/lightbulb.png' %}" style="cursor: default;"><span style="color: #0066FF; font-size: 14px"> If Title is not yet available a subdivision scheme plan is required. If the legal description for subdivision is not available please ensure that the parent title is recorded on the application.</span></i>                                        &lt;!&ndash; span class="pull-right question-badges" style="padding: 2px 8px;">-->
+<!--                                            <span class="badge badge-purple">SI</span>-->
+<!--                                            <span class="badge badge-orange">VM</span>-->
+<!--                                            <span class="badge badge-red">PS</span>-->
+<!--                                            <span class="badge badge-si">ALT</span>-->
+<!--                                        </span &ndash;&gt;-->
+<!--                                        <div id="ref_65101" class="ref"></div><div class="hl"></div>-->
+<!--                                    </td>-->
+<!--                                                                            <td class="rh">-->
+<!--                                            <img id="s_p_65101" xtitle="pass3" src="{% static 'img/yes.png' %}" alt="Yes"><img id="s_f_65101" xtitle="fail3" src="{% static 'img/no_off.png' %}" alt="No"><img id="s_u_65101" xtitle="na3" src="{% static 'img/na_off.png' %}" alt="N/A"><img id="notes_65101" src="{% static 'img/notes.png' %}" alt="Write Notes">                                        </td>-->
+<!--                                                                    </tr>-->
+<!--                                                            <tr id="l_85295" class="odd" data-row-number="4">-->
+<!--                                                                        <td id="q_65114" class="mr">                                                                                <span class="pull-right question-badges" style="padding: 2px 8px;"><span id="200472_2578_65114"></span></span>                                        <b id="t_65114">Approvals from Other Authorities: </b>                                        Does this application involve approvals from other Authorities; and if so have these been provided? <br><a href="javascript:;" class="action-refnotes-inline" qid="65114" ins=""><i><img src="{% static 'img/icons/lightbulb.png' %}" style="cursor: default;"> <span style="color: #0066FF; font-size: 14px">Guidance</span></i></a>                                         &lt;!&ndash; span class="pull-right question-badges" style="padding: 2px 8px;">-->
+<!--                                            <span class="badge badge-purple">SI</span>-->
+<!--                                            <span class="badge badge-orange">VM</span>-->
+<!--                                            <span class="badge badge-red">PS</span>-->
+<!--                                            <span class="badge badge-si">ALT</span>-->
+<!--                                        </span &ndash;&gt;-->
+<!--                                        <div id="ref_65114" class="ref"></div><div class="hl"></div>-->
+<!--                                    </td>-->
+<!--                                                                            <td class="rh">-->
+<!--                                            <img id="s_p_65114" xtitle="pass4" src="{% static 'img/yes.png' %}" alt="Yes"><img id="s_f_65114" xtitle="fail4" src="{% static 'img/no_off.png' %}" alt="No"><img id="s_u_65114" xtitle="na4" src="{% static 'img/na_off.png' %}" alt="N/A"><img id="notes_65114" src="{% static 'img/notes.png' %}" alt="Write Notes">                                        </td>-->
+<!--                                                                    </tr>-->
+<!--                                                            <tr id="l_85289" data-row-number="5">-->
+<!--                                                                        <td id="q_65108" class="mr">                                                                                <span class="pull-right question-badges" style="padding: 2px 8px;"><span id="200472_2578_65108"></span></span>                                        <b id="t_65108">Solid Fuel Appliance: </b>                                        Is adequate documentation provided? <br><a href="javascript:;" class="action-refnotes-inline" qid="65108" ins=""><i><img src="{% static 'img/icons/lightbulb.png' %}" style="cursor: default;"> <span style="color: #0066FF; font-size: 14px">Guidance</span></i></a>                                        &lt;!&ndash; span class="pull-right question-badges" style="padding: 2px 8px;">-->
+<!--                                            <span class="badge badge-purple">SI</span>-->
+<!--                                            <span class="badge badge-orange">VM</span>-->
+<!--                                            <span class="badge badge-red">PS</span>-->
+<!--                                            <span class="badge badge-si">ALT</span>-->
+<!--                                        </span &ndash;&gt;-->
+<!--                                        <div id="ref_65108" class="ref"></div><div class="hl"></div>-->
+<!--                                    </td>-->
+<!--                                                                            <td class="rh">-->
+<!--                                            <img id="s_p_65108" xtitle="pass5" src="{% static 'img/yes.png' %}" alt="Yes"><img id="s_f_65108" xtitle="fail5" src="{% static 'img/no_off.png' %}" alt="No"><img id="s_u_65108" xtitle="na5" src="{% static 'img/na_off.png' %}" alt="N/A"><img id="notes_65108" src="{% static 'img/notes.png' %}" alt="Write Notes">                                        </td>-->
+<!--                                                                    </tr>-->
+<!--                                                            <tr id="l_85297" class="odd" data-row-number="6">-->
+<!--                                                                        <td id="q_65116" class="mr">                                                                                <span class="pull-right question-badges" style="padding: 2px 8px;"><span id="200472_2578_65116"></span></span>                                        <b id="t_65116">Liquid Fuel Appliance: </b>                                        Is adequate documentation provided? <br><a href="javascript:;" class="action-refnotes-inline" qid="65116" ins=""><i><img src="{% static 'img/icons/lightbulb.png' %}" style="cursor: default;"> <span style="color: #0066FF; font-size: 14px">Guidance</span></i></a>                                        &lt;!&ndash; span class="pull-right question-badges" style="padding: 2px 8px;">-->
+<!--                                            <span class="badge badge-purple">SI</span>-->
+<!--                                            <span class="badge badge-orange">VM</span>-->
+<!--                                            <span class="badge badge-red">PS</span>-->
+<!--                                            <span class="badge badge-si">ALT</span>-->
+<!--                                        </span &ndash;&gt;-->
+<!--                                        <div id="ref_65116" class="ref"></div><div class="hl"></div>-->
+<!--                                    </td>-->
+<!--                                                                            <td class="rh">-->
+<!--                                            <img id="s_p_65116" xtitle="pass6" src="{% static 'img/yes_off.png' %}" alt="Yes"><img id="s_f_65116" xtitle="fail6" src="{% static 'img/no.png' %}" alt="No"><img id="s_u_65116" xtitle="na6" src="{% static 'img/na_off.png' %}" alt="N/A"><img id="notes_65116" src="{% static 'img/notes.png' %}" alt="Write Notes">                                        </td>-->
+<!--                                                                    </tr>-->
+                        </table>
+                    </div>
+
+
+</div>
+
+
+
+
+
+</form>
+
+</body>
+</html>

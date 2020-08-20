@@ -20,6 +20,15 @@ from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', views.index, name='index'),
-    path('main/silly-test', views.silly_test, name='silly_test'),
-    path('main/silly-receive-json', views.silly_receive_json, name='silly_receive_json')
+    path('main/vetting-hard-coded-example', views.vetting_hard_coded_example, name='vettingHardCodedExample'),
+    path('main/vetting-example', views.vetting_example, name='vettingExample'),
+    path('main/get-construction-materials', views.get_construction_materials, name='get_construction_materials'),
+    path('main/get-vetting-questions', views.get_vetting_questions, name='get_vetting_questions'),
+    path('main/handle-construction-material-inputs', views.handle_construction_material_inputs,
+         name='handle_construction_material_inputs'),
+
+    # url(r'^products/$', 'viewname', name='urlname')
+
+    # path('main/silly-test', views.silly_test, name='silly_test'),
+    # path('main/silly-receive-json', views.silly_receive_json, name='silly_receive_json')
 ]

@@ -10,5 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "bootstrap": "^4.5.2"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "jquery-popup-overlay": "^2.1.5"
   }
 }
