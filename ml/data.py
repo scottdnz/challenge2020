@@ -154,7 +154,7 @@ def extract_from_db(dbs, qcode):
 
 
 def main():
-	extract_from_db(['napier_checklists', 'pncc_checklists', 'sdc_checklists'], '6a3bc4d3-3cd5-11e6-8be5-000c292dee42')
+	extract_from_db(['napier_checklists', 'pncc_checklists', 'sdc_checklists'], '0ecb7114-1144-11e4-9030-000c29d69785')
 
 
 if __name__ == "__main__":

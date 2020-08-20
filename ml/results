@@ -1,0 +1,7 @@
+0ecb7114-1144-11e4-9030-000c29d69785 - Engineer Verification: Is Specific Engineer Design (SED) accompanied by sufficient information to enable a compliance decision?
+about 80% accuracy
+learning rate 0.02
+
+6a3bc4d3-3cd5-11e6-8be5-000c292dee42 - Roof Frame Detail: Is sufficient information provided to enable a compliance decision? 
+about 90% accuracy but 86% are no
+learning rate 0.002

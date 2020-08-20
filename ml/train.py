@@ -81,7 +81,7 @@ def split_data(df, f):
 
 
 def prepare_data(csv_file):
-	qcode = '6a3bc4d3-3cd5-11e6-8be5-000c292dee42'
+	qcode = '0ecb7114-1144-11e4-9030-000c29d69785'
 
 	training_data_df = pd.read_csv(csv_file)
 	training_data_df = training_data_df.reindex(np.random.permutation(training_data_df.index)) # shuffle the examples
@@ -114,7 +114,7 @@ def prepare_data(csv_file):
 training_x, training_y, test_x, test_y = prepare_data("all_results.csv")
 
 
-learning_rate = 0.002
+learning_rate = 0.02
 epochs = 25
 batch_size = 20
 
