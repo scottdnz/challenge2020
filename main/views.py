@@ -1,9 +1,10 @@
-import json
+import os.path
 
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.db import connection
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
 # from main.lib.TestNumPy import TestNumPy
 # from main.lib.TestPandas import TestPandas
@@ -67,7 +68,15 @@ def handle_construction_material_inputs(request):
 
 
 def train_results1(request):
-	return render(request, 'train_results1.html')
+	demo_file = os.path.join(settings.STATICFILES_DIRS[0],
+							'data',
+							'train_results1.txt');
+
+	with open(demo_file, newline='') as txt_file:
+		data = txt_file.read()
+
+
+	return render(request, 'train_results1.html', {'result_output': data})
 
 
 
