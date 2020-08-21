@@ -4,6 +4,7 @@ import tensorflow as tf
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import *
+from matplotlib import pyplot as plt
 
 
 def build_model(my_learning_rate, inputs):
@@ -70,8 +71,9 @@ def train_model(model, xin, yin, epochs, batch_size):
 	# To track the progression of training, we're going to take a snapshot
 	# of the model's accuracy at each epoch. 
 	accuracy = hist["binary_accuracy"] #loss
+	loss = hist["loss"]
 
-	return trained_weight, trained_bias, epochs, accuracy
+	return trained_weight, trained_bias, epochs, accuracy, loss
 
 
 def split_data(df, f):
@@ -108,7 +110,17 @@ def prepare_data(csv_file, qcode):
 
 	return training_x, training_y, test_x, test_y
 
+def plot_the_loss_curve(epochs, rmse):
+	"""Plot the loss curve, which shows loss vs. epoch."""
 
+	plt.figure()
+	plt.xlabel("Epoch")
+	plt.ylabel("Root Mean Squared Error")
+
+	plt.plot(epochs, rmse, label="Loss")
+	plt.legend()
+	plt.ylim([rmse.min()*0.97, rmse.max()])
+	plt.show()
 
 
 def main():
@@ -126,7 +138,9 @@ def main():
 	# Invoke the functions.
 	my_model = build_model(learning_rate, training_x.shape[1])
 
-	weight, bias, epochs, rmse = train_model(my_model, training_x, training_y, epochs, batch_size)
+	weight, bias, epochs, rmse, loss = train_model(my_model, training_x, training_y, epochs, batch_size)
+
+	plot_the_loss_curve(epochs, loss)
 
 	my_model.save("model"+qcode)
 

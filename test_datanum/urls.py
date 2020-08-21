@@ -26,6 +26,7 @@ urlpatterns = [
     path('main/get-vetting-questions', views.get_vetting_questions, name='get_vetting_questions'),
     path('main/handle-construction-material-inputs', views.handle_construction_material_inputs,
          name='handle_construction_material_inputs'),
+    path('main/train-results1', views.train_results1, name='train_results1'),
 
     # url(r'^products/$', 'viewname', name='urlname')
 

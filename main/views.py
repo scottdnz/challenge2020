@@ -66,6 +66,11 @@ def handle_construction_material_inputs(request):
 	return JsonResponse({"question_ids": qids})
 
 
+def train_results1(request):
+	return render(request, 'train_results1.html')
+
+
+
 # def silly_test(request):
 # 	# Select query
 # 	with connection.cursor() as cursor:
