@@ -32,7 +32,7 @@ def build_model(my_learning_rate, inputs):
 	#model.add(tf.keras.layers.Dense(units=24, activation='relu')) #input_shape=(1,)
 
 	model.add(tf.keras.layers.Dense(units=16, activation='sigmoid'))
-	model.add(tf.keras.layers.Dense(units=4, activation='sigmoid'))
+	#model.add(tf.keras.layers.Dense(units=4, activation='sigmoid'))
 	model.add(tf.keras.layers.Dense(units=1, activation='linear'))
 	#model.add(tf.keras.layers.Dense(units=5, activation='relu'))
 
@@ -68,10 +68,10 @@ def train_model(model, xin, yin, epochs, batch_size):
 	hist = pd.DataFrame(history.history)
 
 	# To track the progression of training, we're going to take a snapshot
-	# of the model's root mean squared error at each epoch. 
-	rmse = 0 #hist["root_mean_squared_error"]
+	# of the model's accuracy at each epoch. 
+	accuracy = hist["binary_accuracy"] #loss
 
-	return trained_weight, trained_bias, epochs, rmse
+	return trained_weight, trained_bias, epochs, accuracy
 
 
 def split_data(df, f):
@@ -80,9 +80,8 @@ def split_data(df, f):
 	return set1, set2
 
 
-def prepare_data(csv_file):
-	qcode = '0ecb7114-1144-11e4-9030-000c29d69785'
-
+def prepare_data(csv_file, qcode):
+	
 	training_data_df = pd.read_csv(csv_file)
 	training_data_df = training_data_df.reindex(np.random.permutation(training_data_df.index)) # shuffle the examples
 
@@ -111,37 +110,47 @@ def prepare_data(csv_file):
 
 
 
-training_x, training_y, test_x, test_y = prepare_data("all_results.csv")
+
+def main():
+	qcode = '41bdb4c8-1144-11e4-9030-000c29d69785'
+	training_x, training_y, test_x, test_y = prepare_data("all_results.csv", qcode)
 
 
-learning_rate = 0.02
-epochs = 25
-batch_size = 20
+	learning_rate = 0.02
+	epochs = 25
+	batch_size = 20
 
-# Discard any pre-existing version of the model.
-my_model = None
+	# Discard any pre-existing version of the model.
+	my_model = None
 
-# Invoke the functions.
-my_model = build_model(learning_rate, training_x.shape[1])
+	# Invoke the functions.
+	my_model = build_model(learning_rate, training_x.shape[1])
 
-weight, bias, epochs, rmse = train_model(my_model, training_x, training_y, epochs, batch_size)
+	weight, bias, epochs, rmse = train_model(my_model, training_x, training_y, epochs, batch_size)
 
-#print("\nThe learned weight for your model is %.4f" % weight)
-#print("The learned bias for your model is %.4f\n" % bias )
+	my_model.save("model"+qcode)
 
-# Specify the feature and the label.
-#my_feature = "classified_use_0"  # the total number of rooms on a specific city block.
-#my_label="question_0402249f-3830-11e6-8be5-000c292dee42_na" # 
-#plot_the_model(weight, bias, my_feature, my_label)
-#plot_the_loss_curve(epochs, rmse)
+	#print("\nThe learned weight for your model is %.4f" % weight)
+	#print("The learned bias for your model is %.4f\n" % bias )
+
+	# Specify the feature and the label.
+	#my_feature = "classified_use_0"  # the total number of rooms on a specific city block.
+	#my_label="question_0402249f-3830-11e6-8be5-000c292dee42_na" # 
+	#plot_the_model(weight, bias, my_feature, my_label)
+	#plot_the_loss_curve(epochs, rmse)
 
 
-r = my_model.evaluate(training_x, training_y, batch_size=batch_size)
-print(r)
+	r = my_model.evaluate(training_x, training_y, batch_size=batch_size)
+	print(r)
 
-#for i in training_x:
-#	r = my_model.predict([i.tolist()])
-#	print(r)
+	#for i in training_x:
+	#	r = my_model.predict([i.tolist()])
+	#	print(r)
 
-r = my_model.evaluate(test_x, test_y, batch_size=batch_size)
-print(r)
+	r = my_model.evaluate(test_x, test_y, batch_size=batch_size)
+	print(r)
+
+
+
+if __name__ == "__main__":
+	main()
