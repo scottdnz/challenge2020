@@ -79,6 +79,9 @@ def train_results1(request):
 	return render(request, 'train_results1.html', {'result_output': data})
 
 
+def app_summary_example(request):
+	return render(request, 'app_summary_example1.html')
+
 
 # def silly_test(request):
 # 	# Select query

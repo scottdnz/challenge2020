@@ -1,0 +1,87 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap_335.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/newui.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/theme.css' %}" />
+
+        <style>
+            #vetting_construction .ui-selected {
+                background: #336699;
+                color: white;
+            }
+            .jtilex h3, .construction_materials_container h3 {
+                color: black !important;
+            }
+
+            #top-heading-cheat {
+                position: fixed;
+                z-index: 999;
+            }
+
+            div {
+                position: relative;
+                z-index: 99;
+            }
+
+            .popupText {
+                font-size: 150% !important;
+                font-weight: bold;
+                color: white;
+            }
+        </style>
+
+        <!-- <script src="js/jquery-ui.js" /> -->
+        <!-- <script src="{% static 'js/jquery-1.11.2.min.js' %}"> </script> -->
+        <script src="{% static 'js/node_modules/jquery/dist/jquery.js' %}"></script>
+
+        <script src="{% static 'js/node_modules/jquery-popup-overlay/jquery.popupoverlay.js' %}"></script>
+
+        <script src="{% static 'js/test.js' %}"> </script>
+
+    </head>
+<body>
+
+
+
+    <div class="container-fluid">
+        <img src="{% static 'img/top_heading_cheat.png' %}" style="width: 100%;" id="top-heading-cheat">
+
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div class="form-group col-md-3">
+            <label for="app_currentuse" class="formhl">Current, lawfully established, use:</label>
+            <select style="background: " class="form-control" id="building_classification" name="app_currentuse">
+                <option value="3" selected>2.0 Housing: <br>2.0.2 Detached Dwelling</option>
+                <option value="4">2.0 Housing: <br>2.0.3 Multi-unit Dwelling</option>
+                <option value="5">2.0 Housing: <br>2.0.4 Group Dwelling</option>
+                <option value="6">3.0 Communal Residential: <br>3.0.2 Community Service </option>
+                <option value="7">3.0 Communal Residential: <br>3.0.3 Community Care (a) Unrestrained</option>
+                <option value="8">3.0 Communal Residential: <br>3.0.3 Community Care (b) Restrained </option>
+                <option value="9">4.0 Communal Non-Residential: <br>4.0.2 Assembly Service</option>
+                <option value="10">4.0 Communal Non-Residential: <br>4.0.3 Assembly Care</option>
+                <option value="11">5.0.1 Commercial</option>
+                <option value="12">6.0.1 Industrial</option>
+                <option value="13">7.0.1 Outbuildings</option>
+                <option value="14">8.0.1 Ancillary</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-md-3">
+                <label for="app_buildinguse">Current building use:</label>
+                <select class="form-control" name="app_buildinguse" id="building_use"><option value=""></option><optgroup label="Sleeping Activities"><option value="1">SR (Sleeping Residential)</option>
+                <option value="2">SH (Sleeping Single Home)</option>
+                </optgroup><optgroup label="Intermittent Activities"><option value="22">IA (Intermittent Low)</option>
+                <option value="23">ID (Intermittent Medium)</option>
+                </optgroup></select>
+            </div>
+
+
+    </div>
+
+    </body>
+</html>
