@@ -62,7 +62,7 @@ $(document).ready(function() {
             $(".ui-selectee").click(function() {
                 $(this).toggleClass("ui-selected");
             });
-        };
+        },
 
 
         fillVetTable: function(data, staticDir) {
@@ -161,10 +161,9 @@ $(document).ready(function() {
                 }
             }
 
-        };
+        },
 
         preselectBoxes: function(data) {
-            console.log(data);
             for (let i = 0; i < data["question_ids"].length; i++) {
                 let $elem = $('#s_u_' + data["question_ids"][i]);
                 let currentImgPath = $elem.attr("src");
@@ -172,37 +171,15 @@ $(document).ready(function() {
 
                 $elem.attr("src", newImgPath);
             }
-        };
-
-
-        // Save construction details button
-        $("#cd_saveform").click(function() {
-            let cmIdsSelected = [];
-            $("ul.ui-selectable > .ui-selected").each(function() {
-                cmIdsSelected.push($(this).attr("id"));
-            });
-
-            $('#JPO').popup('show');
-
-            $.ajax({
-                method: "POST",
-                url: "/main/handle-construction-material-inputs",
-                data: {"cm_ids": cmIdsSelected},
-                success: function(data) {
-                    preselectBoxes(data);
-                },
-                dataType: "json"
-            });
-        });
-
+        },
 
         initialise: function(staticDir, jobId) {
-
+            let self = this;
             $.ajax({
                 url: "/main/get-construction-materials",
                 data: [],
                 success: function(data) {
-                    fillCMTable(data);
+                    self.fillCMTable(data);
                 },
                 dataType: "json"
             });
@@ -211,7 +188,7 @@ $(document).ready(function() {
                 url: "/main/get-vetting-questions?jid=" + jobId,
                 data: [],
                 success: function(data) {
-                    fillVetTable(data, staticDir);
+                    self.fillVetTable(data, staticDir);
                 },
                 dataType: "json"
             });
@@ -219,7 +196,28 @@ $(document).ready(function() {
             $('#JPO').popup({opacity: 0.8});
 
 	        $('#JPO').popup('hide');
+
+	        // Save construction details button
+            $("#cd_saveform").click(function() {
+                let cmIdsSelected = [];
+                $("ul.ui-selectable > .ui-selected").each(function() {
+                    cmIdsSelected.push($(this).attr("id"));
+                });
+
+                $('#JPO').popup('show');
+
+                $.ajax({
+                    method: "POST",
+                    url: "/main/handle-construction-material-inputs",
+                    data: {"cm_ids": cmIdsSelected},
+                    success: function(data) {
+                        self.preselectBoxes(data);
+                    },
+                    dataType: "json"
+                });
+            });
         }
+
     };
 
 	let staticDir = "/static/";
