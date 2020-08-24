@@ -135,7 +135,7 @@ $(document).ready(function() {
 
                     let img1 = document.createElement("img");
                     img1.setAttribute("id", "s_p_" + currentQuestion["qID"]);
-                    img1.setAttribute("src", staticDir + "img/yes.png");
+                    img1.setAttribute("src", staticDir + "img/yes_off.png");
 
                     let img2 = document.createElement("img");
                     img2.setAttribute("id", "s_f_" + currentQuestion["qID"]);
@@ -147,7 +147,7 @@ $(document).ready(function() {
 
                     let img4 = document.createElement("img");
                     img4.setAttribute("id", "notes_" + currentQuestion["qID"]);
-                    img4.setAttribute("src", staticDir + "img/notes.png");
+                    img4.setAttribute("src", staticDir + "img/notes_off.png");
 
                     aCell.appendChild(img1);
                     aCell.appendChild(img2);
@@ -165,11 +165,16 @@ $(document).ready(function() {
 
         preselectBoxes: function(data) {
             for (let i = 0; i < data["question_ids"].length; i++) {
-                let $elem = $('#s_u_' + data["question_ids"][i]);
-                let currentImgPath = $elem.attr("src");
-                let newImgPath = currentImgPath.replace("_off", "_on");
 
-                $elem.attr("src", newImgPath);
+                let $naElem = $('#s_u_' + data["question_ids"][i]);
+                let currentImgPath =$naElem.attr("src");
+                let newImgPath = currentImgPath.replace("_off", "_on");
+                $naElem.attr("src", newImgPath);
+
+                let $yesElem = $('#s_p_' + data["question_ids"][i]);
+                currentImgPath =$yesElem.attr("src");
+                newImgPath = currentImgPath.replace("_on", "_off");
+                $yesElem.attr("src", newImgPath);
             }
         },
 

@@ -82,6 +82,8 @@ def train_results1(request):
 def app_summary_example(request):
 	return render(request, 'app_summary_example1.html')
 
+def diagram(request):
+	return render(request, 'diagram.html')
 
 # def silly_test(request):
 # 	# Select query

@@ -27,7 +27,8 @@ urlpatterns = [
     path('main/handle-construction-material-inputs', views.handle_construction_material_inputs,
          name='handle_construction_material_inputs'),
     path('main/train-results1', views.train_results1, name='train_results1'),
-    path('main/app-summary-example', views.app_summary_example, name='app_summary_example')
+    path('main/app-summary-example', views.app_summary_example, name='app_summary_example'),
+    path('main/diagram', views.diagram, name='diagram')
 
     # url(r'^products/$', 'viewname', name='urlname')
 
